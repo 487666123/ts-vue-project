@@ -4,11 +4,11 @@
         <h2>年龄: {{ age }}</h2>
         <n-space>
             <n-button @click="changeName" type="primary">修改姓名</n-button>
-            <n-button @click="changeAge" type="info">修改年龄</n-button>
+            <n-button @click="changeAge" type="info">年龄 +1</n-button>
             <n-button @click="alertTelephone" type="warning">查看联系信息</n-button>
         </n-space>
         <h2>一辆 {{ car.brand }} 车, 价值 {{ car.price }} 万元</h2>
-        <n-button @click="changePrice">修改汽车价格</n-button>
+        <n-button type="success" @click="changePrice">修改汽车价格</n-button>
         <ul>
             <li v-for="game of games" key="game.id">{{ game.name }}</li>
         </ul>
@@ -40,8 +40,7 @@
 
     // 方法
     function changeName() {
-        name.value = 'zhang-san' // 注意: 这样修改 name，页面是没有变化的
-        console.log(name) // name 确实改了，但是 name 不是响应式
+        name.value += ' ~' // 注意: 这样修改 name，页面是没有变化的
     }
 
     function changeAge() {
